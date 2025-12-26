@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import zestcodeLogo from "@/assets/zestcode-logo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,14 +42,13 @@ const Header = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20 px-4 sm:px-6 lg:px-8">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-              <span className="text-accent-foreground font-bold text-xl">Z</span>
-            </div>
-            <span className="text-xl font-bold text-foreground">
-              Zestcode<span className="text-accent">.</span>
-            </span>
-          </div>
+          <a href="#" className="flex items-center">
+            <img 
+              src={zestcodeLogo} 
+              alt="Zestcode Technology logo" 
+              className="h-10 sm:h-12 w-auto"
+            />
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
