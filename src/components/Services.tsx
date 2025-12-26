@@ -1,36 +1,25 @@
-import { Code2, Cloud, Brain, Smartphone, RefreshCcw } from "lucide-react";
+import { 
+  Brain, 
+  GitBranch, 
+  Gauge, 
+  BarChart3, 
+  Cloud, 
+  Smartphone, 
+  ShoppingCart, 
+  Palette, 
+  Megaphone 
+} from "lucide-react";
 
 const services = [
-  {
-    icon: Code2,
-    title: "Web Development",
-    description:
-      "Custom web applications built with modern technologies. From responsive websites to complex enterprise platforms, we deliver solutions that scale.",
-  },
-  {
-    icon: Cloud,
-    title: "Cloud Solutions",
-    description:
-      "Migrate, optimise, and manage your cloud infrastructure. We help you leverage the full potential of AWS, Azure, and Google Cloud.",
-  },
-  {
-    icon: Brain,
-    title: "AI & Automation",
-    description:
-      "Integrate artificial intelligence and automation into your business processes. Streamline operations and unlock new possibilities.",
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile App Development",
-    description:
-      "Native and cross-platform mobile applications designed for exceptional user experience across iOS and Android devices.",
-  },
-  {
-    icon: RefreshCcw,
-    title: "Digital Transformation",
-    description:
-      "End-to-end digital transformation consulting. We help modernise legacy systems and implement innovative technology strategies.",
-  },
+  { icon: Brain, title: "AI & Machine Learning" },
+  { icon: GitBranch, title: "DevOps Solutions" },
+  { icon: Gauge, title: "Performance Tuning" },
+  { icon: BarChart3, title: "Data Analytics & Business Intelligence" },
+  { icon: Cloud, title: "Cloud Applications & ERP Software" },
+  { icon: Smartphone, title: "Mobile Application Development (iOS & Android)" },
+  { icon: ShoppingCart, title: "E-commerce Website Development" },
+  { icon: Palette, title: "UI & UX Design" },
+  { icon: Megaphone, title: "Digital Marketing Services" },
 ];
 
 const Services = () => {
@@ -38,36 +27,33 @@ const Services = () => {
     <section id="services" className="section-padding bg-background">
       <div className="container-custom">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-accent font-semibold mb-3">Our Services</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <p className="text-accent font-medium text-sm tracking-wide uppercase mb-4">
+            Our Services
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Technology Solutions That{" "}
             <span className="text-accent">Drive Growth</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            We offer comprehensive technology services tailored to your business
-            needs. Our expertise spans the full spectrum of modern software
-            development and digital innovation.
+            Comprehensive technology services tailored to your business needs.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="group bg-card rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 border border-border"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group flex flex-col items-center text-center p-8 rounded-xl border border-border/60 bg-card hover:border-accent/40 hover:shadow-lg transition-all duration-300"
+              style={{ animationDelay: `${index * 0.05}s` }}
             >
-              <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300">
-                <service.icon className="w-7 h-7 text-accent group-hover:text-accent-foreground transition-colors duration-300" />
+              <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-accent/20 transition-colors duration-300">
+                <service.icon className="w-6 h-6 text-accent" strokeWidth={1.5} />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">
+              <h3 className="text-sm sm:text-base font-semibold text-foreground leading-snug">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {service.description}
-              </p>
             </div>
           ))}
         </div>
