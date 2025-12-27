@@ -1,23 +1,29 @@
 import { Quote } from "lucide-react";
+import testimonialSarah from "@/assets/testimonial-sarah.jpg";
+import testimonialJames from "@/assets/testimonial-james.jpg";
+import testimonialEmma from "@/assets/testimonial-emma.jpg";
 
 const testimonials = [
   {
     quote: "Zestcode transformed our legacy systems into a modern cloud platform. Their expertise and professionalism exceeded our expectations.",
     name: "Sarah Mitchell",
     role: "CTO",
-    company: "Horizon Financial Group"
+    company: "Horizon Financial Group",
+    image: testimonialSarah
   },
   {
     quote: "The team delivered our mobile application on time and within budget. Their communication throughout the project was exceptional.",
     name: "James Chen",
     role: "Director of Operations",
-    company: "Pacific Logistics"
+    company: "Pacific Logistics",
+    image: testimonialJames
   },
   {
     quote: "Working with Zestcode has been a game-changer for our digital presence. Their strategic approach to technology solutions is impressive.",
     name: "Emma Richardson",
     role: "CEO",
-    company: "Coastal Healthcare"
+    company: "Coastal Healthcare",
+    image: testimonialEmma
   }
 ];
 
@@ -49,11 +55,18 @@ const Testimonials = () => {
               <p className="text-foreground/80 leading-relaxed flex-grow mb-6">
                 "{testimonial.quote}"
               </p>
-              <div className="border-t border-border/50 pt-6">
-                <p className="font-semibold text-foreground">{testimonial.name}</p>
-                <p className="text-sm text-muted-foreground">
-                  {testimonial.role}, {testimonial.company}
-                </p>
+              <div className="border-t border-border/50 pt-6 flex items-center gap-4">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="w-12 h-12 rounded-full object-cover"
+                />
+                <div>
+                  <p className="font-semibold text-foreground">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {testimonial.role}, {testimonial.company}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
